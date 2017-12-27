@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white_f5f5f5">
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:id="@+id/pull_to_refresh_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:ptrIsShowLoadMoreView="false"
+        app:ptrIsShowRefreshView="false">
+
+        <LinearLayout
+            android:id="@+id/showContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/yellow_FFFBF2"
+                android:orientation="vertical">
+
+                <com.knms.shop.android.view.TimeLineView
+                    android:id="@+id/timeLineView"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_margin="10dp"
+                    app:tlv_lineWidth="5dp"
+                    app:tlv_TextSize="14sp"
+                    app:tlv_radius="8dp"
+                    app:preStringColor="@android:color/darker_gray"
+                    app:preCircleColor="#ECECEC"
+                    app:preLineColor="#ECECEC"
+                    app:startedLineColor="@color/yellow_FFD400"
+                    app:startedCircleColor="@color/yellow_FFD400"
+                    app:underwayStringColor="@color/yellow_FFD400"
+                    app:underwayCircleColor="@color/yellow_FFD400"
+                    app:startedStringColor="@color/yellow_FFD400" />
+
+                <TextView
+                    android:id="@+id/tv_state_describe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/huang_FFDC50"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/rl_shopinfo_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white_ffffff">
+
+                <com.knms.shop.android.view.CircleImageView
+                    android:id="@+id/iv_shop_logo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_avatar" />
+
+                <TextView
+                    android:id="@+id/tv_shop_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_shop_logo"/>
+                <TextView
+                    android:id="@+id/hint_bind"
+                    android:visibility="gone"
+                    android:text="用户未绑定该订单"
+                    android:textColor="@color/red_FB6161"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"/>
+
+
+                <TextView
+                    android:id="@+id/tv_telephone_connection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_border_gray_rectangle"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="电话联系" />
+
+                <TextView
+                    android:id="@+id/tv_online_connection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_toLeftOf="@+id/tv_telephone_connection"
+                    android:background="@drawable/bg_border_gray_rectangle"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="在线联系" />
+            </RelativeLayout>
+
+            <View style="@style/line.hor" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_order_complaint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_order_schedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+    <LinearLayout
+        android:id="@+id/showBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_ffffff"
+        android:orientation="vertical">
+
+        <View style="@style/line.hor" />
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/returns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gray_round_3dp"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingRight="10dp"
+                android:text="用户退货" />
+            <TextView
+                android:id="@+id/alterTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gray_round_3dp"
+                android:gravity="center"
+                android:textColor="@color/gray_999999"
+                android:layout_marginRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="修改送货时间" />
+            <TextView
+                android:id="@+id/lookComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rectangle_btn"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="查看评价" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

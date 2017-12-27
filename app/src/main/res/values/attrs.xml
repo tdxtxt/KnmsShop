@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RotateLoading">
+        <attr name="loading_width" format="dimension"/>
+        <attr name="loading_color" format="color"/>
+        <attr name="shadow_offset" format="dimension"/>
+        <attr name="loading_visible" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="border_overlay" format="boolean" />
+        <attr name="fill_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="PullToRefresh">
+        <!-- 设置整个刷新列表的背景色 -->
+        <attr name="ptrRefreshableViewBackground" format="reference|color" />
+        <!--  设置下拉Header或者上拉Footer的背景色 -->
+        <attr name="ptrHeaderBackground" format="reference|color" />
+        <!-- 用于设置Header与Footer中文本的颜色 -->
+        <attr name="ptrHeaderTextColor" format="reference|color" />
+        <!-- 用于设置Header与Footer中上次刷新时间的颜色 -->
+        <attr name="ptrHeaderSubTextColor" format="reference|color" />
+        <attr name="ptrMode">
+            <flag name="disabled" value="0x0" /><!-- 禁用下拉刷新 -->
+            <flag name="pullFromStart" value="0x1" /><!-- 仅支持下拉刷新 -->
+            <flag name="pullFromEnd" value="0x2" /><!-- 仅支持上拉刷新 -->
+            <flag name="both" value="0x3" /><!-- 上拉刷新和下拉刷新都支持 -->
+            <flag name="manualOnly" value="0x4" /><!-- 只允许手动触发 -->
+
+            <!-- These last two are depreacted -->
+            <flag name="pullDownFromTop" value="0x1" />
+            <flag name="pullUpFromBottom" value="0x2" />
+        </attr>
+
+        <!-- 如果为true会在mPullRefreshListView中出现icon，右上角和右下角，挺有意思的 -->
+        <attr name="ptrShowIndicator" format="reference|boolean" />
+
+        <!-- 同时改变头部和底部的图标 -->
+        <attr name="ptrDrawable" format="reference" />
+
+        <!-- 头部视图的图标-->
+        <attr name="ptrDrawableStart" format="reference" />
+
+        <!-- 底部视图的图标 -->
+        <attr name="ptrDrawableEnd" format="reference" />
+
+        <!-- Whether Android's built-in Over Scroll should be utilised for Pull-to-Refresh. -->
+        <attr name="ptrOverScroll" format="reference|boolean" />
+
+        <!-- 分别设置拉Header或者上拉Footer中字体的类型颜色等等 -->
+        <attr name="ptrHeaderTextAppearance" format="reference" />
+
+        <!-- Base text color, typeface, size, and style for Header and Footer Loading Views Sub Header -->
+        <attr name="ptrSubHeaderTextAppearance" format="reference" />
+
+        <!-- Style of Animation should be used displayed when pulling. -->
+        <attr name="ptrAnimationStyle">
+            <flag name="rotate" value="0x0" /><!-- flip（翻转动画）， rotate（旋转动画）  -->
+            <flag name="flip" value="0x1" />
+        </attr>
+
+        <!-- 刷新的时候，是否允许ListView或GridView滚动 -->
+        <attr name="ptrScrollingWhileRefreshingEnabled" format="reference|boolean" />
+
+        <!-- 决定了Header，Footer以何种方式加入mPullRefreshListView，true为headView方式加入，就是滚动时刷新头部会一起滚动 -->
+        <attr name="ptrListViewExtrasEnabled" format="reference|boolean" />
+
+        <!--
+        	Whether the Drawable should be continually rotated as you pull. This only
+        	takes effect when using the 'Rotate' Animation Style.
+        -->
+        <attr name="ptrRotateDrawableWhilePulling" format="reference|boolean" />
+
+        <!-- BELOW HERE ARE DEPRECEATED. DO NOT USE. -->
+        <attr name="ptrAdapterViewBackground" format="reference|color" />
+        <attr name="ptrDrawableTop" format="reference" />
+        <attr name="ptrIsShowLoadMoreView" format="boolean"/>
+        <attr name="ptrIsShowRefreshView" format="boolean"/>
+        <attr name="ptrDrawableBottom" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="TagFlowLayout">
+        <attr name="auto_select_effect" format="boolean"></attr>
+        <attr name="max_select" format="integer"></attr>
+        <attr name="gravity">
+            <enum name="left" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="FlikerProgressBar">
+        <attr name="textSize" format="dimension|reference"/>
+        <attr name="loadingColor" format="color|reference"/>
+        <attr name="stopColor" format="color|reference"/>
+    </declare-styleable>
+    <!-- 吸顶 -->
+    <declare-styleable name="StickyScrollView">
+        <attr name="stuckShadowHeight" format="dimension" />
+        <attr name="stuckShadowDrawable" format="reference" />
+    </declare-styleable>
+    <!--wheelView-->
+    <declare-styleable name="pickerview">
+        <attr name="pickerview_gravity">
+            <enum name="center" value="17"/>
+            <enum name="left" value="3"/>
+            <enum name="right" value="5"/>
+        </attr>
+        <attr name="pickerview_textSize" format="dimension"/>
+        <attr name="pickerview_textColorOut" format="color"/>
+        <attr name="pickerview_textColorCenter" format="color"/>
+        <attr name="pickerview_dividerColor" format="color"/>
+        <attr name="pickerview_lineSpacingMultiplier" format="float"/>
+    </declare-styleable>
+    <declare-styleable name="TimeLineView">
+        <attr name="startedLineColor" format="color"/>
+        <attr name="preLineColor" format="color"/>
+        <attr name="startedCircleColor" format="color"/>
+        <attr name="underwayCircleColor" format="color"/>
+        <attr name="preCircleColor" format="color"/>
+        <attr name="startedStringColor" format="color"/>
+        <attr name="underwayStringColor" format="color"/>
+        <attr name="preStringColor" format="color"/>
+        <attr name="tlv_TextSize" format="dimension"/>
+        <attr name="tlv_radius" format="dimension"/>
+        <attr name="tlv_lineWidth" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="star">
+        <!--星星选择数量-->
+        <attr format="float" name="startMark"></attr>
+        <!--星星数量-->
+        <attr format="integer" name="starsNum"></attr>
+        <!--星星宽度-->
+        <attr format="dimension" name="starWidth"></attr>
+        <!--星星高度-->
+        <attr format="dimension" name="starHeight"></attr>
+        <!--星星间距-->
+        <attr format="dimension" name="starDistance"></attr>
+        <!--星星背景 -->
+        <attr format="reference" name="starBackground"></attr>
+        <!--星星变化背景 -->
+        <attr format="reference" name="starDrawBackground"></attr>
+        <!--控件是否可以点击 -->
+        <attr format="boolean" name="starClickable"></attr>
+    </declare-styleable>
+    <declare-styleable name="MaxHeightLinearLayout">
+        <attr name="mhv_HeightRatio" format="reference|float" />
+        <attr name="mhv_HeightDimen" format="reference|dimension" />
+    </declare-styleable>
+</resources>

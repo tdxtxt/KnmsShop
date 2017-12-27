@@ -1,0 +1,163 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        releaseConfig {
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.knms.shop.android"
+        minSdkVersion 15
+        targetSdkVersion 17
+        versionCode 10
+        versionName "V1.3.0"
+        buildConfigField "String","SER_VERSION_CODE","\"and0707cy1657\"" //版本升级versionCode
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,//JPush 注册的引用包名
+                JPUSH_APPKEY : "eca66433272286c9624ba404", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default" //JPush用户渠道统计的渠道名称
+        ]
+        multiDexEnabled true
+        ndk {
+            //选择要添加的对应cpu类型的.so库。 还可以添加 "x86", "x86_64", "mips", "mips64", "arm64-v8a"
+            abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+        }
+    }
+    buildTypes {
+        release {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.releaseConfig
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //正式地址
+            buildConfigField "String", "HOST", "\"https://app.kebuyer.com/\""
+            //正式服务器资源路径
+            buildConfigField "String", "SRC", "\"https://img.kebuyer.com/img/\""
+            //更新地址
+            buildConfigField "String", "HOST_UPDATE", "\"https://config.kebuyer.com/\""
+            //网络连接超时时间
+            buildConfigField "int", "SOCKET_TIMEOUT", "10 * 1000"
+            //是否打印LOG
+            buildConfigField "Boolean", "isLog", "false"
+            resValue "string", "shop_name", "铠恩买手商家"
+            //app名称
+//            manifestPlaceholders = [APP_NAME: "铠恩买手商家"]
+            jniDebuggable false
+        }
+        debug {
+            signingConfig signingConfigs.releaseConfig
+            //测试地址
+            buildConfigField "String", "HOST", "\"http://app.testalone.knms.com/knmsApi/\""
+            //测试服务器资源路径
+            buildConfigField "String", "SRC", "\"http://img.test02.kebuyer.com/img/\""
+            //更新地址
+            buildConfigField "String", "HOST_UPDATE", "\"https://config.kebuyer.com/\""
+            //网络连接超时时间
+            buildConfigField "int", "SOCKET_TIMEOUT", "10 * 1000"
+            //是否打印LOG
+            buildConfigField "Boolean", "isLog", "true"
+            resValue "string", "shop_name", "测试版_商家端"
+//            manifestPlaceholders = [APP_NAME: "测试版_商家端"]
+        }
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (variant.buildType.name == 'release') {
+                def fileName = "kebuyer_merchant_${defaultConfig.versionName}.apk"
+                output.outputFile = new File(outputFile.parent, fileName)
+            }else if(variant.buildType.name == 'debug'){
+                def fileName = "debug_shore_${defaultConfig.versionCode}_${defaultConfig.versionName}.apk"
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs/jniLibs']
+        }
+        /* android.applicationVariants.all { variant ->
+            tasks.all { task ->
+                if (task.name.startsWith("prepare") && task.name.endsWith("Dependencies")) {
+                    task.doLast {
+                        findJniAndRemove("${buildDir}/intermediates/exploded-aar")
+                    }
+                }
+            }
+        } */
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':magicindicator')
+    compile 'com.android.support:recyclerview-v7:24.0.0'
+    compile 'io.reactivex:rxjava:latest.integration'
+    compile 'io.reactivex:rxandroid:latest.integration'
+    compile 'com.squareup.okhttp3:okhttp:latest.integration'
+    compile 'com.squareup.okhttp3:logging-interceptor:latest.integration'
+    compile 'com.squareup.retrofit2:retrofit:latest.integration'
+    compile 'com.squareup.retrofit2:converter-gson:latest.integration'
+    compile 'com.squareup.retrofit2:adapter-rxjava:latest.integration'
+    // 基础功能 (必需)
+    compile 'com.netease.nimlib:basesdk:3.4.0'
+    //友盟统计
+    compile 'com.umeng.analytics:dplus:6.0.6.001'
+    //本地存储
+    compile 'com.orhanobut:hawk:2.0.1'
+    //图片收缩控件
+    compile 'com.bm.photoview:library:1.4.1'
+    //滑动黏性工具类 使用教程https://github.com/EverythingMe/overscroll-decor
+    compile 'me.everything:overscroll-decor-android:1.0.4'
+    compile 'cn.jiguang.sdk:jpush:3.0.5'
+    // 此处以JPush 3.0.5 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.2'
+    // 此处以JCore 1.1.2 版本为例。
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.1.5
+    /**蒙层引导 https://github.com/huburt-Hu/NewbieGuide**/
+    compile('com.github.huburt-Hu:NewbieGuide:v1.2.0') {
+        exclude group: 'com.android.support'
+    }
+}
+void findJniAndRemove(String str) {
+    File file = new File(str)
+    if (file != null && file.isDirectory()) {
+        File[] dirs = file.listFiles()
+        for (File dir : dirs) {
+            if (dir.getName().contains("jni") && dir.isDirectory()) {
+                String[] libs = dir.list()
+                for (String lib : libs) {
+                    boolean remove = false
+                    if (lib.equals("arm64-v8a")) {
+                        remove = true
+                    }
+                    if (lib.equals("mips")) {
+                        remove = true
+                    }
+                    if (lib.equals("mips64")) {
+                        remove = true
+                    }
+                    if (lib.equals("x86_64")) {
+                        remove = true
+                    }
+                    if (remove) {
+                        String dest = new File(dir, lib).getPath()
+                        delete("${dest}")
+                    }
+                }
+            } else {
+                findJniAndRemove(dir.getAbsolutePath())
+            }
+        }
+    }
+}

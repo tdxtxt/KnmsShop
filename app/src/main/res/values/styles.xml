@@ -1,0 +1,136 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"/>
+    <style name="push_in_out" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_up_in</item>
+        <item name="android:windowExitAnimation">@anim/push_up_out</item>
+    </style>
+    <style name="line_comm_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/gray_dcdcdc</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="horizontal_light_thin_divider">
+        <item name="android:layout_height">2px</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/gray_d9d9d9</item>
+    </style>
+    <style name="chat_item_date">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_rectangle_gray</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">1dp</item>
+        <item name="android:paddingBottom">1dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="chat_item_content">
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+    <style name="chat_item_image_content">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxWidth">150dp</item>
+        <item name="android:maxHeight">150dp</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:minWidth">50dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+    <style name="chat_item_avatar">
+        <item name="android:layout_width">42dp</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:focusable">false</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:src">@drawable/icon_avatar</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+    <style name="chat_item_text_content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:lineSpacingExtra">3dp</item>
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+    <style name="ratingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:stepSize">1.0</item>
+        <item name="android:numStars">5</item>
+        <item name="android:rating">5</item>
+    </style>
+    <!-- 评分样式 小 -->
+    <style name="ratingBar.Small" parent="ratingBar">
+        <item name="android:progressDrawable">@drawable/star_small</item>
+        <item name="android:minHeight">8dp</item>
+        <item name="android:maxHeight">10dp</item>
+        <item name="android:isIndicator">true</item>
+    </style>
+    <!-- 评分样式 大 -->
+    <style name="ratingBar.Big" parent="ratingBar">
+        <item name="android:progressDrawable">@drawable/star_big</item>
+        <item name="android:minHeight">30dp</item>
+        <item name="android:maxHeight">35dp</item>
+        <item name="android:isIndicator">false</item>
+    </style>
+    <style name="line">
+        <item name="android:background">@color/white_f5f5f5</item>
+    </style>
+    <!--竖线-->
+    <style name="line.ver" parent="line">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <!--横线-->
+    <style name="line.hor" parent="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+    <style name="layoutHor">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="msgtipText">
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_width">20dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="submit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="HooliganActivityStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoDisplay">false</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray_f6f6f6">
+
+    <include layout="@layout/top_title_layout" />
+
+    <View style="@style/line_comm_style" />
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <ScrollView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+              <include layout="@layout/item_release_bbprice" />
+          </LinearLayout>
+      </ScrollView>
+      <RelativeLayout
+          android:id="@+id/rl_status"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:visibility="gone" />
+  </FrameLayout>
+</LinearLayout>

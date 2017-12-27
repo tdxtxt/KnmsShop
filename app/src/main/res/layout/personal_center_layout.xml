@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white_f5f5f5"
+              android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/line_view"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <RelativeLayout
+                android:id="@+id/go_user_info"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="10dp"
+                android:background="#FDC838">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <com.knms.shop.android.view.CircleImageView
+                            android:id="@+id/iv_avatar"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/icon_avatar"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/icon_edit"/>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/app_name"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- 线下订单start-->
+            <LinearLayout
+                android:id="@+id/showOrder"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white_ffffff">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:text="商场支付订单"/>
+
+                    <TextView
+                        android:id="@+id/order_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="12dp"
+                        android:drawablePadding="10dp"
+                        android:drawableRight="@drawable/qiepian_33"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:text="全部"
+                        android:textColor="@color/gray_999999"
+                        android:textSize="13sp"/>
+                </RelativeLayout>
+                <!--订单-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/white_ffffff"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp">
+
+                    <LinearLayout
+                        android:id="@+id/order_state_1"
+                        style="@style/layoutHor"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+
+                            <ImageView
+                                android:id="@+id/icon_order_state_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/wd_1"/>
+
+                            <com.knms.shop.android.view.tv.MsgTipText
+                                android:id="@+id/tv_new_count_wait_give"
+                                style="@style/msgtipText"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="-10dp"
+                                android:layout_toRightOf="@+id/icon_order_state_1"
+                                android:gravity="center"
+                                android:textColor="@color/white_ffffff"
+                                android:visibility="visible"/>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="待送货"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/order_state_2"
+                        style="@style/layoutHor"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+
+                            <ImageView
+                                android:id="@+id/icon_order_state_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/wd_2"/>
+
+                            <com.knms.shop.android.view.tv.MsgTipText
+                                android:id="@+id/tv_new_count_wait_receipt"
+                                style="@style/msgtipText"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="-10dp"
+                                android:layout_toRightOf="@+id/icon_order_state_2"
+                                android:gravity="center"
+                                android:textColor="@color/white_ffffff"
+                                android:visibility="visible"/>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="待收货"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/order_state_3"
+                        style="@style/layoutHor"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+
+                            <ImageView
+                                android:id="@+id/icon_order_state_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/wd_3"/>
+
+                            <com.knms.shop.android.view.tv.MsgTipText
+                                android:id="@+id/tv_new_count_wait_comment"
+                                style="@style/msgtipText"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="-10dp"
+                                android:layout_toRightOf="@+id/icon_order_state_3"
+                                android:gravity="center"
+                                android:textColor="@color/white_ffffff"
+                                android:visibility="visible"/>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="待评价"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/order_state_4"
+                        style="@style/layoutHor"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+
+                            <ImageView
+                                android:id="@+id/icon_order_state_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/wd_4"/>
+
+                            <com.knms.shop.android.view.tv.MsgTipText
+                                android:id="@+id/tv_new_count_wait_reply"
+                                style="@style/msgtipText"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="-10dp"
+                                android:layout_toRightOf="@+id/icon_order_state_4"
+                                android:gravity="center"
+                                android:textColor="@color/white_ffffff"
+                                android:visibility="visible"/>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="待回复"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 线下订单end-->
+
+            <!-- TODO 支付订单隐藏 -->
+            <!-- app支付订单start -->
+            <LinearLayout
+                android:id="@+id/showAppOrder"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white_ffffff">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:text="APP支付订单"/>
+
+                    <TextView
+                        android:id="@+id/app_order_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="12dp"
+                        android:drawablePadding="10dp"
+                        android:drawableRight="@drawable/qiepian_33"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:text="全部"
+                        android:textColor="@color/gray_999999"
+                        android:textSize="13sp"/>
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/white_ffffff"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp">
+
+                    <LinearLayout
+                        android:id="@+id/app_order_obligation"
+                        style="@style/layoutHor"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+
+                            <ImageView
+                                android:id="@+id/icon_app_order_obligation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/wd_5"/>
+
+                            <com.knms.shop.android.view.tv.MsgTipText
+                                android:id="@+id/tv_app_new_count_obligation"
+                                style="@style/msgtipText"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="-10dp"
+                                android:layout_toRightOf="@+id/icon_app_order_obligation"
+                                android:gravity="center"
+                                android:textColor="@color/white_ffffff"
+                                android:visibility="visible"/>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="待付款"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/app_order_state_1"
+                        style="@style/layoutHor"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+
+                            <ImageView
+                                android:id="@+id/icon_app_order_state_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/wd_1"/>
+
+                            <com.knms.shop.android.view.tv.MsgTipText
+                                android:id="@+id/tv_app_new_count_wait_give"
+                                style="@style/msgtipText"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="-10dp"
+                                android:layout_toRightOf="@+id/icon_app_order_state_1"
+                                android:gravity="center"
+                                android:textColor="@color/white_ffffff"
+                                android:visibility="visible"/>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="待送货"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/app_order_state_2"
+                        style="@style/layoutHor"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+
+                            <ImageView
+                                android:id="@+id/icon_app_order_state_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/wd_2"/>
+
+                            <com.knms.shop.android.view.tv.MsgTipText
+                                android:id="@+id/tv_app_new_count_wait_receipt"
+                                style="@style/msgtipText"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="-10dp"
+                                android:layout_toRightOf="@+id/icon_app_order_state_2"
+                                android:gravity="center"
+                                android:textColor="@color/white_ffffff"
+                                android:visibility="visible"/>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="待收货"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/app_order_state_3"
+                        style="@style/layoutHor"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+
+                            <ImageView
+                                android:id="@+id/icon_app_order_state_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/wd_3"/>
+
+                            <com.knms.shop.android.view.tv.MsgTipText
+                                android:id="@+id/tv_app_new_count_wait_comment"
+                                style="@style/msgtipText"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="-10dp"
+                                android:layout_toRightOf="@+id/icon_app_order_state_3"
+                                android:gravity="center"
+                                android:textColor="@color/white_ffffff"
+                                android:visibility="visible"/>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="待评价"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/app_order_state_4"
+                        style="@style/layoutHor"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+
+                            <ImageView
+                                android:id="@+id/icon_app_order_state_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/wd_4"/>
+
+                            <com.knms.shop.android.view.tv.MsgTipText
+                                android:id="@+id/tv_app_new_count_wait_reply"
+                                style="@style/msgtipText"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="-10dp"
+                                android:layout_toRightOf="@+id/icon_app_order_state_4"
+                                android:gravity="center"
+                                android:textColor="@color/white_ffffff"
+                                android:visibility="visible"/>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="待回复"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- app支付订单end -->
+
+            <RelativeLayout
+                android:id="@+id/mine_shop"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:drawableLeft="@drawable/icon_shop"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="我的店铺"
+                    android:textColor="#333333"
+                    android:textSize="14dp"
+                    android:textStyle="normal"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/qiepian_33"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_invite_friends"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:drawableLeft="@drawable/icon_invitefriends"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="邀请好友"
+                    android:textColor="#333333"
+                    android:textSize="14dp"
+                    android:textStyle="normal"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/qiepian_33"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/feedback"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:drawableLeft="@drawable/wode_13"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="意见反馈"
+                    android:textColor="#333333"
+                    android:textSize="14dp"
+                    android:textStyle="normal"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/qiepian_33"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:drawableLeft="@drawable/icon_instructions"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="使用说明"
+                    android:textColor="#333333"
+                    android:textSize="14dp"
+                    android:textStyle="normal"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/qiepian_33"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/setting"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:drawableLeft="@drawable/wode_15"
+                    android:drawablePadding="4dp"
+                    android:gravity="center"
+                    android:text="设置"
+                    android:textColor="#333333"
+                    android:textSize="14dp"
+                    android:textStyle="normal"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/qiepian_33"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/call"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/text_border_red"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp"
+                        android:text="联系客服:023-63317666"
+                        android:textColor="@color/red"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="客服工作时间：周一至周日9:00-18:00"
+                        android:textColor="@color/gray_999999"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

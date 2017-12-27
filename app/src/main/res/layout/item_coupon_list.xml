@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:paddingBottom="10dp"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_coupon_list"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="86dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white_ffffff"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¥"
+                    android:textSize="16sp"
+                    android:textColor="@color/white_ffffff"/>
+
+                <TextView
+                    android:id="@+id/money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/white_ffffff"
+                    android:textSize="22sp"/>
+
+                <TextView
+                    android:id="@+id/count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/white_ffffff"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/indate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="15dp"
+                android:minWidth="95dp"
+                android:textColor="@color/white_ffffff"/>
+
+            <TextView
+                android:id="@+id/gettime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="25dp"
+                android:layout_marginRight="120dp"
+                android:background="@drawable/coupon_zhang"
+                android:paddingBottom="3dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="3dp"
+                android:rotation="-15"
+                android:textSize="13sp"
+                android:textColor="@color/red_ccfa3c55"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:background="@drawable/right_semicircle"
+                android:layout_width="5dp"
+                android:layout_height="8dp"/>
+            <View
+                android:background="@drawable/coupon_line"
+                android:layout_width="0dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layerType="software"
+                android:layout_weight="1"
+                android:layout_height="1dp"/>
+            <View
+                android:background="@drawable/left_semicircle"
+                android:layout_width="5dp"
+                android:layout_height="8dp"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:textColor="#a97700"
+            android:textSize="12sp"/>
+    </LinearLayout>
+</LinearLayout>

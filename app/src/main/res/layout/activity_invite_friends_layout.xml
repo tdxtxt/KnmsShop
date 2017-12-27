@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/white_f5f5f5"
+    android:id="@+id/ll_rootview"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/top_title_layout"/>
+
+    <com.knms.shop.android.view.CleanableEditText
+        android:id="@+id/ed_invitee_tel"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:hint="请输入被邀请人的电话号码"
+        android:textSize="14sp"
+        android:layout_height="48dp"
+        android:maxLength="11"
+        android:focusable="true"
+        android:inputType="phone"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@color/white_ffffff"/>
+
+    <TextView
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_rectangle_gray"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="提交"
+        android:textColor="@color/grey" />
+
+    <TextView
+        android:id="@+id/tv_lookall_inviter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:padding="8dp"
+        android:text="查看已邀请好友列表"
+        android:textSize="12sp"
+        android:textColor="@color/red"/>
+
+</LinearLayout>

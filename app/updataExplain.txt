@@ -1,0 +1,14 @@
+	VERSION_CODE = "and0123aw1101";
+	VERSION_NAME = "V1.0.3";
+//首页调整，铃声调整
+	VERSION_CODE = "and0124hk0941";
+	VERSION_NAME = "V1.0.4";
+//新增订单管理
+	VERSION_CODE = "and0410ns1424";
+	VERSION_NAME = "V1.2.0";
+//界面调整
+	VERSION_CODE = "and0518yh1341";
+	VERSION_NAME = "V1.2.1";
+//下个版本
+	VERSION_CODE = "and0627mq1010";
+	VERSION_NAME = "V1.2.2";

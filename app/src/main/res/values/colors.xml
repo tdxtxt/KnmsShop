@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="no_color">#00000000</color>
+    <color name="gray_999999">#999999</color>
+    <color name="black_666666">#666666</color>
+    <color name="gray_dcdcdc">#DCDCDC</color>
+    <color name="gray_f6f6f6">#F6F6F6</color>
+    <color name="gray_e0e0e0">#e0e0e0</color>
+    <color name="gray_666666">#666666</color>
+
+    <color name="gray_757572">#757572</color>
+    <color name="gray_d9d9d9">#D9D9D9</color>
+    <color name="gray_aaaaaa">#aaaaaa</color>
+    <color name="yellow_ffe816">#FFE816</color>
+    <color name="yellow_FFD400">#FFD400</color>
+    <color name="yellow_FFFBF2">#FFFBF2</color>
+
+    <color name="white_ffffff">#FFFFFF</color>
+    <color name="white_f5f5f5">#F5F5F5</color>
+    <color name="white_e5e5e5">#e5e5e5</color>
+    <color name="common_line_color">#E6E6E6</color>
+
+    <color name="red_ee4b62">#EE4B62</color>
+    <color name="red_ccfa3c55">#ccfa3c55</color>
+    <color name="red_FB6161">#FB6161</color>
+
+    <color name="black_000000">#ff000000</color>
+    <color name="black_24221E">#24221E</color>
+    <color name="black_333333">#333333</color>
+
+    <color name="bule_3f51b5">#3F51B5</color>
+    <color name="huang_FFDC50">#FFDC50</color>
+    <color name="blue_208DF5">#208DF5</color>
+
+    <color name="blue_edfaff">#EDFAFF</color>
+</resources>

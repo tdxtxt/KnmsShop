@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_ffffff"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/top_title_layout" />
+
+    <View
+        android:layout_below="@+id/layout_top"
+        style="@style/line_comm_style"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon_knms" />
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_call"
+            android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/red"
+            android:text="铠恩买手客服电话：023-63317666"/>
+        <TextView
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/gray_999999"
+            android:text="Copyright@2016 knms.All Rights Reserved"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_ver_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="21dp"
+        android:textColor="@color/black_333333"
+        android:text="v2.0"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

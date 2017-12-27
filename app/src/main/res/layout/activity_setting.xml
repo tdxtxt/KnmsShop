@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:divider="@drawable/line_view"
+    android:orientation="vertical"
+    android:showDividers="middle">
+
+    <include
+        android:id="@+id/top_title"
+        layout="@layout/top_title_layout" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="消息推送"
+            android:textColor="#333333"
+            android:textSize="14dp"
+            android:textStyle="normal" />
+        <ToggleButton
+            android:id="@+id/push_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/setting_toggle_button_style"
+            android:checked="true"
+            android:text=""
+            android:textOff=""
+            android:textOn="" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="响铃模式"
+            android:textColor="#333333"
+            android:textSize="14dp"
+            android:textStyle="normal" />
+        <ToggleButton
+            android:id="@+id/toggle_ring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/setting_toggle_button_style"
+            android:checked="true"
+            android:text=""
+            android:textOff=""
+            android:textOn="" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/clear_cache"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="清空缓存"
+            android:textColor="#333333"
+            android:textSize="14dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/cache_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="4dp"
+            android:layout_toLeftOf="@+id/img_goto"
+            android:textColor="#999999"
+            android:textSize="12dp" />
+
+        <ImageView
+            android:id="@+id/img_goto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/qiepian_33" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/about_us"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="关于我们"
+            android:textColor="#333333"
+            android:textSize="14dp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/qiepian_33" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/check_update"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="检查更新"
+            android:textColor="#333333"
+            android:textSize="14dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/version_information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:textColor="#999999"
+            android:textSize="12dp"
+            android:textStyle="normal" />
+    </RelativeLayout>
+
+</LinearLayout>

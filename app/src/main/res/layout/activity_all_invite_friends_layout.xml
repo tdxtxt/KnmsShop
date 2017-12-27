@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_f5f5f5"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top_layout"
+        layout="@layout/top_title_layout" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_layout"
+        android:layout_below="@+id/top_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white_ffffff"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="手机号"
+                android:textColor="@color/gray_666666" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="邀请时间"
+                android:textColor="@color/gray_666666" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="状态"
+                android:textColor="@color/gray_666666" />
+        </LinearLayout>
+
+        <View
+            style="@style/line_comm_style"
+            android:layout_marginTop="48dp" />
+
+        <com.handmark.pulltorefresh.library.PullToRefreshRecyclerView
+            android:id="@+id/rv_allfriends"
+            android:layout_width="match_parent"
+            android:background="@color/white_f5f5f5"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"></com.handmark.pulltorefresh.library.PullToRefreshRecyclerView>
+
+        <RelativeLayout
+            android:id="@+id/rl_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!--    <TextView
+            android:id="@+id/tv_invite_number"
+            android:layout_width="match_parent"
+            android:padding="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white_ffffff"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:text="已成功邀请0人"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />-->
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@color/white_ffffff"
+        android:gravity="center"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已成功邀请" />
+
+        <TextView
+            android:id="@+id/tv_invite_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:padding="2dp"
+            android:text="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="人" />
+    </LinearLayout>
+
+</RelativeLayout>
